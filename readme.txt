@@ -26,7 +26,7 @@ The "SNORDIAN's H5P Content Type Repository Manager" plugin for WordPress allows
 The settings of this plugin are available by going to `Settings -> H5P Content Type Repository Manager`.
 
 === URL ===
-By default, H5P's core library will use the base URL `api.h5p.org/v1` which points towards H5P Group's official H5P Content Type Hub. If you want to get content types from a different H5P Content Type Hub, you can change the `URL` option to the base URL of the alternative hub.
+By default, H5P's core library will use the base URL `hub-api.h5p.org/v1` which points towards H5P Group's official H5P Content Type Hub. If you want to get content types from a different H5P Content Type Hub, you can change the `URL` option to the base URL of the alternative hub.
 Note: You may want to set up your alternative hub yourself. There's the node.js based server software called [Catharsis](https://github.com/otacke/catharsis) for this purpose.
 
 === Schedule automated updates ===

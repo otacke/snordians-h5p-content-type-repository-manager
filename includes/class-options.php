@@ -22,7 +22,7 @@ class Options {
 	 *
 	 * @var string
 	 */
-	const DEFAULT_ENDPOINT_URL_BASE = 'api.h5p.org/v1';
+	const DEFAULT_ENDPOINT_URL_BASE = 'hub-api.h5p.org/v1';
 
 	/**
 	 * Default schedule for automated updates.
