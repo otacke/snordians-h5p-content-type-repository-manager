@@ -176,7 +176,7 @@ class Main {
 		}
 
 		$file_content = preg_replace(
-			"/(CONTENT_TYPES = ')(.*)(\/content-types\/';)/",
+			"/(CONTENT_TYPES = ')(.*)(\/content-types\/?';)/",
 			'$1' . $endpoint_url_base . '$3',
 			$file_content
 		);

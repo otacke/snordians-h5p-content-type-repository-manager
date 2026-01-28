@@ -113,7 +113,7 @@ class ContentTypeRepositoryConnector {
 	 * @return string The complete API endpoint URL.
 	 */
 	private static function build_api_endpoint( $machine_name = null, $endpoint = 'content-types' ) {
-		$protocol          = extension_loaded( 'openssl' ) ? 'http' : 'http';
+		$protocol          = 'https';
 		$endpoint_url_base = Options::get_endpoint_url_base();
 
 		return "{$protocol}://{$endpoint_url_base}/{$endpoint}" . ( $machine_name ? "/{$machine_name}" : '' );
