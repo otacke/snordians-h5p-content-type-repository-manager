@@ -29,6 +29,7 @@ class Main {
 	 */
 	public function __construct() {
 		new Options( self::get_endpoint_in_h5p_core() );
+		add_action( 'update_option', array( self::class, 'handle_option_added' ), 10, 2 );
 		add_action( 'update_option', array( self::class, 'handle_option_updated' ), 10, 3 );
 		add_action( 'upgrader_process_complete', array( self::class, 'handle_content_type_upgraded' ), 10, 2 );
 		add_action( 'snordiansh5pcontenttyperepositorymanager_update_libraries', array( $this, 'update_installed_h5p_libraries' ), 10, 0 );
@@ -50,6 +51,16 @@ class Main {
 	public function update_installed_h5p_libraries() {
 		$content_type_hub_connector = new ContentTypeRepositoryConnector();
 		$content_type_hub_connector->install_new_content_type_versions();
+	}
+
+	/**
+	 * Handle first-time creation of options.
+	 *
+	 * @param string $option_name The name of the option that was added.
+	 * @param mixed  $new_value The new value of the option.
+	 */
+	public static function handle_option_added( $option_name, $new_value ) {
+			self::handle_option_updated( $option_name, null, $new_value );
 	}
 
 	/**
